@@ -5,356 +5,292 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Radhika Trader</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:Arial,sans-serif;
 }
 
 body{
-background:#021914;
-overflow-x:hidden;
-color:#fff;
-}
-
-body::before{
-content:'';
-position:fixed;
-width:100%;
-height:100%;
-background:
-radial-gradient(circle,#00ffbf22 1px,transparent 1px);
-background-size:25px 25px;
-opacity:.6;
-z-index:-2;
-}
-
-body::after{
-content:'';
-position:fixed;
-inset:0;
-background:
-linear-gradient(135deg,
-rgba(0,255,180,.05),
-rgba(0,0,0,.2));
-z-index:-1;
+background:#021818;
+background-image:
+linear-gradient(rgba(0,255,180,.08) 1px,transparent 1px),
+linear-gradient(90deg,rgba(0,255,180,.08) 1px,transparent 1px);
+background-size:40px 40px;
+color:white;
+display:flex;
+justify-content:center;
+padding:20px;
 }
 
 .container{
-max-width:480px;
-margin:auto;
-padding:20px;
+width:100%;
+max-width:800px;
 text-align:center;
-min-height:100vh;
 }
 
-.top-bar{
-color:#58ffd2;
-font-size:12px;
+.top-title{
+font-size:22px;
 font-weight:700;
-letter-spacing:2px;
-margin-top:5px;
-margin-bottom:60px;
+letter-spacing:1px;
+margin-bottom:25px;
 }
 
-.profile-wrap{
+.profile-box{
 position:relative;
-width:190px;
-height:190px;
+width:240px;
+height:240px;
 margin:auto;
-border-radius:50%;
-padding:5px;
-background:linear-gradient(45deg,#00ffbf,#ffcb22);
-box-shadow:0 0 30px rgba(0,255,180,.35);
 }
 
-.profile{
+.profile-ring{
+width:240px;
+height:240px;
+padding:6px;
+border-radius:50%;
+background:linear-gradient(45deg,#39ffb6,#ffd633);
+box-shadow:0 0 40px #39ffb6;
+}
+
+.profile-ring img{
 width:100%;
 height:100%;
 border-radius:50%;
 object-fit:cover;
-border:5px solid #041f18;
+border:5px solid #021818;
 }
 
 .verify{
 position:absolute;
+right:10px;
 bottom:15px;
-right:12px;
-width:52px;
-height:52px;
-background:#19d878;
+width:60px;
+height:60px;
 border-radius:50%;
+background:#2cff8f;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:24px;
+font-size:30px;
+font-weight:bold;
+border:4px solid #021818;
+}
+
+.mini-title{
+margin-top:25px;
+font-size:26px;
 font-weight:700;
-color:#fff;
-border:4px solid #041f18;
 }
 
-.name-tag{
-margin-top:20px;
-font-size:15px;
-font-weight:700;
-letter-spacing:4px;
-color:#62ffd4;
-}
-
-.small-line{
-margin-top:12px;
-font-size:13px;
-letter-spacing:2px;
-color:#8ca59f;
-}
-
-.title{
+.main-title{
+font-size:72px;
+font-weight:900;
 margin-top:10px;
-font-size:50px;
-font-weight:800;
-line-height:1;
 }
 
-.title span{
-color:#ffcb22;
+.main-title span{
+color:#ffd633;
 }
 
 .subtitle{
-margin-top:15px;
-font-size:20px;
-font-weight:600;
-color:#6cffd8;
+font-size:24px;
+color:#cde;
+margin-top:10px;
 }
 
-.desc{
-margin-top:6px;
-font-size:17px;
-color:#cfd9d6;
+.telegram-heading{
+margin-top:20px;
+font-size:22px;
+font-weight:bold;
+color:#ffb347;
 }
 
-.desc b{
-color:#ffcb22;
+.join-btn{
+display:inline-block;
+margin-top:25px;
+padding:22px 70px;
+background:#53ffd1;
+color:#000;
+text-decoration:none;
+font-size:32px;
+font-weight:900;
+border-radius:22px;
+box-shadow:0 0 35px #53ffd1;
 }
 
-.features{
+.community{
+margin-top:20px;
+font-size:24px;
+font-weight:700;
+}
+
+.description{
+margin-top:10px;
+font-size:18px;
+opacity:.9;
+}
+
+.market-grid{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:12px;
-margin-top:30px;
+gap:15px;
+margin-top:35px;
 }
 
-.box{
-background:rgba(255,255,255,.03);
-border:1px solid rgba(255,255,255,.08);
-border-radius:18px;
-padding:18px 8px;
+.market-card{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.1);
 backdrop-filter:blur(10px);
+padding:25px 10px;
+border-radius:20px;
+font-size:24px;
 }
 
-.icon{
-font-size:28px;
-margin-bottom:10px;
-}
-
-.box p{
-font-size:13px;
-font-weight:600;
+.market-card span{
+display:block;
+margin-top:10px;
+font-size:16px;
+font-weight:700;
 }
 
 .stats{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-margin-top:22px;
-background:rgba(255,255,255,.03);
-border:1px solid rgba(255,255,255,.08);
+margin-top:35px;
+background:rgba(255,255,255,.05);
 border-radius:20px;
-overflow:hidden;
+padding:25px;
+display:flex;
+justify-content:space-around;
 }
 
-.stat{
-padding:18px 10px;
-}
-
-.stat h2{
-font-size:32px;
-font-weight:800;
-}
-
-.green{
-color:#1cffbc;
-}
-
-.yellow{
-color:#ffcb22;
-}
-
-.stat span{
-font-size:12px;
-letter-spacing:1px;
-color:#c8d2cf;
-}
-
-.badges{
-margin-top:18px;
-font-size:14px;
-color:#b9c3c0;
-}
-
-.join-btn{
-display:block;
-text-decoration:none;
-margin-top:30px;
-background:linear-gradient(90deg,#1cffbc,#66ffd7);
-color:#000;
+.stats h2{
 font-size:28px;
-font-weight:800;
-padding:20px;
-border-radius:22px;
-box-shadow:0 0 30px rgba(28,255,188,.4);
-transition:.3s;
 }
 
-.join-btn:hover{
-transform:scale(1.03);
+.stats p{
+margin-top:5px;
 }
 
 .footer{
-margin-top:15px;
-font-size:13px;
-color:#93a09c;
+margin-top:25px;
+opacity:.7;
 }
 
-@media(max-width:480px){
+@media(max-width:700px){
 
-.title{
-font-size:42px;
+.main-title{
+font-size:48px;
 }
 
-.subtitle{
-font-size:18px;
-}
-
-.desc{
-font-size:15px;
+.market-grid{
+grid-template-columns:repeat(2,1fr);
 }
 
 .join-btn{
 font-size:24px;
+padding:18px 40px;
 }
 
 }
+
 </style>
 </head>
-
 <body>
 
 <div class="container">
 
-<div class="top-bar">
-✦ INDIA'S TOP SEBI REGISTERED RESEARCH ANALYST ✦
+<div class="top-title">
+✦ FREE MARKET LEARNING COMMUNITY ✦
 </div>
 
-<div class="profile-wrap">
-<img src="https://i.ibb.co/wh6m17Qg/IMG-20260303-162957-628.jpg" class="profile">
+<div class="profile-box">
+
+<div class="profile-ring">
+<img src="https://i.ibb.co/wh6m17Qg/IMG-20260303-162957-628.jpg">
+</div>
+
 <div class="verify">✓</div>
+
 </div>
 
-<div class="name-tag">
+<div class="mini-title">
 📈 RADHIKA TRADER 📈
 </div>
 
-<div class="small-line">
-— SEBI REGISTERED RESEARCH ANALYST —
-</div>
-
-<div class="title">
+<div class="main-title">
 RADHIKA <span>TRADER</span>
 </div>
 
 <div class="subtitle">
-India's Top SEBI Analyst • 60K+ Members 🇮🇳
+Market Updates & Learning 🇮🇳
 </div>
 
-<div class="desc">
-<b>Expert Calls</b> • Banknifty • Nifty • Finnifty • More
+<div class="telegram-heading">
+🔥 FREE TELEGRAM COMMUNITY
 </div>
 
-<div class="features">
+<a href="https://t.me/+2xh3Jn5FkekxZjY1" class="join-btn">
+➡️ 📱 JOIN FOR FREE
+</a>
 
-<div class="box">
-<div class="icon">📊</div>
-<p>BANK<br>NIFTY</p>
+<div class="community">
+👥 Join Our Growing Community
 </div>
 
-<div class="box">
-<div class="icon">📈</div>
-<p>NIFTY<br>50</p>
+<div class="description">
+Market Updates • Educational Content • Community Discussions
 </div>
 
-<div class="box">
-<div class="icon">💹</div>
-<p>FINN<br>NIFTY</p>
+<div class="market-grid">
+
+<div class="market-card">
+📊
+<span>BANK NIFTY</span>
 </div>
 
-<div class="box">
-<div class="icon">🏛️</div>
-<p>SEN<br>SEX</p>
+<div class="market-card">
+📈
+<span>NIFTY 50</span>
+</div>
+
+<div class="market-card">
+💹
+<span>FINN NIFTY</span>
+</div>
+
+<div class="market-card">
+🏛
+<span>SENSEX</span>
 </div>
 
 </div>
 
 <div class="stats">
 
-<div class="stat">
-<h2 class="green">60K+</h2>
-<span>MEMBERS</span>
-</div>
-
-<div class="stat">
-<h2 class="yellow">SEBI</h2>
-<span>REGISTERED</span>
-</div>
-
-<div class="stat">
+<div>
 <h2>FREE</h2>
-<span>TO JOIN</span>
+<p>ACCESS</p>
+</div>
+
+<div>
+<h2>24×7</h2>
+<p>UPDATES</p>
+</div>
+
+<div>
+<h2>LIVE</h2>
+<p>COMMUNITY</p>
 </div>
 
 </div>
-
-<div class="badges">
-✅ SEBI Verified &nbsp;&nbsp; 📊 8 Instruments &nbsp;&nbsp; 🇮🇳 India #1
-</div>
-
-<a href="https://t.me/+2xh3Jn5FkekxZjY1" class="join-btn">
-📲 JOIN FOR FREE
-</a>
 
 <div class="footer">
 Radhika Trader © 2026
 </div>
 
 </div>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '882776157423424');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=882776157423424&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+
 </body>
 </html>
